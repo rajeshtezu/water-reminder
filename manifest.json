@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Drink Water",
+  "version": "1.0.0",
+  "description": "Water intake reminder",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content-script.js"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/drop.png",
+      "48": "assets/drop.png",
+      "128": "assets/drop.png"
+    },
+    "default_title": "Drink Water",
+    "default_popup": "./src/popup/popup.html"
+  },
+  "options_page": "./src/option/option.html",
+  "background": {
+    "service_worker": "./src/sw/service-worker.js",
+    "type": "module"
+  },
+  "permissions": ["storage", "alarms", "notifications", "offscreen"]
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Drink Water</title>
+  </head>
+  <body>
+    <main id="main" class="main">
+      <h1 class="h-title">
+        <span>Drink Water</span>
+        <img src="../drop.png" alt="water" class="h1-water-img" />
+      </h1>
+
+      <p class="hey-msg">Hey, <span id="hey-msg-name"></span>!</p>
+
+      <hr />
+
+      <p class="reminder-text">
+        Reminder interval: <span id="reminder-interval-val"></span> min
+      </p>
+
+      <button id="start" class="start-stop hide">Start reminder</button>
+      <button id="stop" class="start-stop show">Stop reminder</button>
+    </main>
+
+    <footer class="footer">Customize the settings on options page.</footer>
+
+    <script src="popup.js" type="module" defer></script>
+  </body>
+</html>
