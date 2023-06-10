@@ -20,14 +20,13 @@ async function saveFormData(event) {
   if (customMessage) setToStorage(CONSTANT.NOTIFICATION_MESSAGE, customMessage);
 
   if (periodInMin) {
-    setToStorage(CONSTANT.PERIOD_IN_MIN, periodInMin);
-    // if (periodInMin >= 1 && periodInMin <= 90) {
-    //   setToStorage(CONSTANT.PERIOD_IN_MIN, periodInMin);
-    // } else {
-    //   showDialog('Please set notification period value in range (1-90)', 2000);
+    if (periodInMin >= 1 && periodInMin <= 90) {
+      setToStorage(CONSTANT.PERIOD_IN_MIN, periodInMin);
+    } else {
+      showDialog('Please set notification period value in range (1-90)', 2000);
 
-    //   return;
-    // }
+      return;
+    }
   }
 
   chrome.runtime.sendMessage({ update: CONSTANT.STORAGE_UPDATED });

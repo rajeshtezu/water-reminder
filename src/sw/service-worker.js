@@ -1,7 +1,12 @@
 import { getFromStorage, CONSTANT } from '../util.js';
 
+setInterval(() => {
+  chrome.storage.local.get();
+}, 25000);
+
 let username = 'there';
 let notificationMsg = 'Time to get hydrated.';
+let hrefList = [];
 
 async function updateName() {
   const { name } = await getFromStorage(CONSTANT.NAME);
@@ -37,7 +42,7 @@ async function notify() {
   try {
     registration.showNotification(`Hey ${username},`, {
       body: notificationMsg,
-      icon: '../drop.png',
+      icon: 'assets/drop.png',
       requireInteraction: true,
     });
   } catch (error) {
